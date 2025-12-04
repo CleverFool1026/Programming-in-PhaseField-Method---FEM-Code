@@ -1,11 +1,11 @@
 %% input_fem_elast.m
 function [npoin,nelem,nvfix,ntype,nnode,ndofn,ndime,ngaus, ...
-    nstre,nmats,nprop,lnods,matno,coord,props,nofix, ...
+    nstre,nmats,nprop,lnods, matno,coord,props,nofix, ...
     iffix,fixed] = input_fem_elast( )
 format long;
 
-globe in;
-globe out;
+global in;
+global out;
 
 %--- read the Control data:
 npoin = fscanf(in,'%d',1);
@@ -25,7 +25,7 @@ for ielem = 1:nelem
     jelem = fscanf(in, '%d', 1);
     dummy = fscanf(in, '%d', [nnode + 1, 1]);
     for inode = 1:nnode
-        londs(jelem, inode) = dummy(inode);
+        lnods(jelem, inode) = dummy(inode);
     end
     matno(jelem) = dummy(nnode + 1);
 end

@@ -2,8 +2,8 @@ function[gforce] = loads(npoin,nelem,ndofn,nnode,ngaus,ndime, ...
     posgp,weigp,lnods,coord)
 format long;
 
-globe in;
-globe out;
+global in;
+global out;
 
 %--- Initilize global force vector (rhs) & element loads:
 nevab = nnode * ndofn;

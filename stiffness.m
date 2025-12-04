@@ -55,7 +55,8 @@ for igaus = 1:ngaus
 
         dvolu = djacb*weigp(igaus)*weigp(jgaus);
 
-        if(node == 3)
+        % 对三节点三角形单元，只有一维权重
+        if(nnode == 3)
             dvolu = djacb*weigp(igaus);
         end
 

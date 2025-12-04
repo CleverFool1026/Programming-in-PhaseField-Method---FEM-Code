@@ -2,7 +2,7 @@ function[ ] = output(npoin,nelem,nnode,lnods,coord,ndofn,...
     ngaus,nstre,asdis,elem_stres)
 format long;
 
-globe out;
+global out;
 
 fprintf(out,'\n');
 fprintf(out,'********************\n');

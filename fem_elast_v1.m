@@ -1,14 +1,14 @@
 %             FEM CODE FOR LINEAR ELASTICITY 
 % get wall time
-tme0 = datetime("now");
+time0 = datetime("now");
 format long;
 
 % ---open input & output file
 
-globe in;
+global in;
 in = fopen('mesh_1.inp', 'r');
 
-globe out;
+global out;
 out = fopen('result_1.out','w');
 
 %--- Input FEM data:
@@ -36,7 +36,7 @@ asdis = gstif\gforce;
     ntype,ndofn,ndime,lnods,matno,coord,posgp,weigp);
 
 %--- output results:
-output_fem(npoin,nelem,nnode,lnods,coord,ndofn,ngaus,nstre,...
+output(npoin,nelem,nnode,lnods,coord,ndofn,ngaus,nstre,...
     asdis,elem_stres);
 
 %--- end of execution:
